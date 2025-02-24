@@ -1,3 +1,4 @@
+
 # 📰 Autonomous AI News Agent
 
 An end-to-end AI-powered system that autonomously searches, summarizes, and publishes news articles using **Mistral-7B** and the **Google Blogger API**.
@@ -8,8 +9,13 @@ An end-to-end AI-powered system that autonomously searches, summarizes, and publ
   
   <!-- Demo Video (Replace with your actual video link) -->
   <p><b>🎬 Watch the AI News Agent in Action:</b></p>
-  <p>[INSERT DEMO VIDEO HERE]</p>
   
+
+https://github.com/user-attachments/assets/4379be43-91c6-4b13-8714-d10b297fb1fa
+
+
+
+
   <!-- Sample Blog Post Image (Replace with your actual image) -->
   <p><b>📸 Example AI-Generated Blog Post:</b></p>
   <img width="1320" alt="image" src="https://github.com/user-attachments/assets/3e89227c-ed24-47d3-9edb-c0e74466d072" />
@@ -142,3 +148,4 @@ pip install -r requirements.txt
 
 ## 📌 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+pi lovers though.
