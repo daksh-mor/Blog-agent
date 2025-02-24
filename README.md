@@ -1,63 +1,71 @@
-# Autonomous AI News Agent
+# 📰 Autonomous AI News Agent
 
-This project implements an autonomous AI agent that searches, summarizes, and publishes news content.
+An end-to-end AI system that autonomously searches, summarizes, and publishes news articles using **Mistral-7B** and the **Google Blogger API**.
 
-## Installation
+Our AI-driven solution automates the entire news publishing process by integrating real-time web scraping, NLP-based content processing, and automated publishing. It collects news from various sources, including Times of India, processes the content using Mistral-7B for structured summaries, and enhances SEO with SpaCy and YAKE. A SQLite database ensures duplicate filtering, while the final output is formatted in JSON for structured storage. The system then publishes articles automatically to a blog via the Google Blogger API, creating a fully autonomous pipeline that transforms raw web data into polished, SEO-optimized articles in minutes.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your_repository_url>
-    cd <your_repository_directory>
-    ```
-2.  **Install the required Python packages:**
-    ```bash
-    pip install tavily-python requests beautifulsoup4 transformers torch google-api-python-client google-auth-httplib2 google-auth-oauthlib
-    ```
-3.  **Set up Google Blogger API credentials:**
-    * Create a Google Cloud project and enable the Blogger API.
-    * Download the `credentials.json` file and place it in the project directory.
+---
 
-## Usage
+## 🔑 Required Credentials
 
-1.  **Run the script:**
-    * The code is structured as a series of python code cells.
-    * The first cell install the required packages.
-    * The second cell uses the Tavily API to search for news articles based on a query. It then extracts the text content of the articles using BeautifulSoup.
-    * The third cell uses a T5 model (from Hugging Face Transformers) to summarize the extracted text and generate a title.
-    * The fourth cell authenticates with the Google Blogger API and publishes the summarized content as a new blog post.
-    * Run the python code cells in sequential order.
-2.  **Authentication:**
-    * When the script runs the authentication step, it will open a browser window to authenticate with your Google account. Follow the prompts to grant the necessary permissions.
-3.  **Blogger Configuration:**
-    * Replace `"7894317275629685509"` with your actual Blogger blog ID in the `create_blog_post` function.
-    * Replace `"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"` with your tavily api key.
-4. **Running the code**
-    * The code was run inside a jupyter notebook environment.
+### 1️⃣ Hugging Face Token (For Mistral-7B)
+- Sign up at [Hugging Face](https://huggingface.co)
+- Generate a token from [Settings → Access Tokens](https://huggingface.co/settings/tokens)
+- Add to your code:
+  
+  ```python
+  login(token="YOUR_HF_TOKEN")
+  ```
 
-## Code Description
+### 2️⃣ Tavily API Key
+- Register at [Tavily](https://tavily.com/)
+- Add to your code:
+  
+  ```python
+  tavily_api = "YOUR_API_KEY"
+  ```
 
-* **`give_content(query)`:**
-    * Uses the Tavily API to search for news articles.
-    * Extracts the text content from the articles using `requests` and `BeautifulSoup`.
-* **`TextSummarizer` class:**
-    * Initializes a T5 model and tokenizer.
-    * Provides methods for preprocessing text, generating summaries, and generating titles.
-* **`authenticate()`:**
-    * Authenticates with the Google Blogger API using OAuth 2.0.
-* **`create_blog_post(creds, title, content)`:**
-    * Publishes a new blog post using the Blogger API.
+### 3️⃣ Google Blogger API Credentials
+- Create a **Google Cloud Project**
+- Enable the **Blogger API**
+- Generate an **OAuth 2.0 Client ID**
+- Download the credentials file as `configure.json`
 
-## Dependencies
+---
 
-* `tavily-python`
-* `requests`
-* `beautifulsoup4`
-* `transformers`
-* `torch`
-* `google-api-python-client`
-* `google-auth-httplib2`
-* `google-auth-oauthlib`
+## 🚀 Installation
 
-## Output
+```bash
+git clone https://github.com/yourusername/daksh-mor-blog-agent.git
+cd daksh-mor-blog-agent
+pip install -r requirements.txt
+```
 
-The script will output the URL of the newly created blog post.
+---
+
+## 🛠️ Usage
+
+1. **Set up credentials** in `pipeline.ipynb`
+2. **Define the target news topic** in the notebook
+3. **Run all cells** to:
+   - 🔍 Scrape the latest news
+   - 📝 Generate an SEO-optimized summary
+   - 📢 Publish automatically to your Blogger site
+
+---
+
+## ⚙️ Tech Stack
+
+| Component | Description |
+|-----------|-------------|
+| **Mistral-7B** | 4-bit quantized LLM for text generation |
+| **Tavily Web Search API** | Real-time web search for news articles |
+| **Google Blogger API** | Automated blog publishing |
+| **SQLite** | URL tracking to prevent duplicate posts |
+| **BeautifulSoup** | Web scraping for content extraction |
+
+---
+
+## 📝 Automated Output
+This AI system generates **well-structured, SEO-friendly news articles** and publishes them directly to your **Blogger** site with minimal human intervention.
+
